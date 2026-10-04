@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oyunumuz - Sıfır Atık Okulu</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .game-placeholder {
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .game-placeholder h1 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="assets/logo.png" alt="Sıfır Atık Okulu Logo"></a>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">ANA SAYFA</a></li>
+                <li><a href="game.html" class="active">OYUNUMUZ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="game-container" id="game-container">
+            <!-- Progress Bar -->
+            <div class="game-progress">
+                <div class="progress-steps">
+                    <div class="step-dot active" data-step="1"></div>
+                    <div class="step-dot" data-step="2"></div>
+                    <div class="step-dot" data-step="3"></div>
+                </div>
+                <div class="progress-line">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+            </div>
+
+            <!-- Start Screen -->
+            <div class="game-screen active" id="start-screen">
+                <h1 class="game-title">Atığını Tanımaya Hazır Mısın?</h1>
+                <p class="game-intro">Sana 3 soru soracağız ve atığının hangi kutuya gitmesi gerektiğini söyleyeceğiz!
+                </p>
+                <div class="start-illustration">
+                    <img src="assets/hero.png" alt="Oyun Başlasın">
+                </div>
+                <button class="game-btn primary" id="start-game-btn">MACERAYA BAŞLA!</button>
+            </div>
+
+            <!-- Question Screen -->
+            <div class="game-screen" id="question-screen">
+                <div class="question-card">
+                    <h2 id="question-text">Soru 1: Elindeki atık sert mi, bükülebilir mi?</h2>
+                    <div class="question-image" id="question-image">
+                        <!-- Dynamic image or icon here -->
+                        <div class="item-square">?</div>
+                    </div>
+                </div>
+                <div class="options-container" id="options-container">
+                    <!-- Options will be added dynamically -->
+                    <button class="option-btn">
+                        <span class="option-icon">🧱</span>
+                        <span class="option-text">SENT</span>
+                    </button>
+                    <button class="option-btn">
+                        <span class="option-icon">🌀</span>
+                        <span class="option-text">BÜKÜLEBİLİR</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Result Screen -->
+            <div class="game-screen" id="result-screen">
+                <div class="result-card">
+                    <h3>Atığın Şuraya Gidiyor:</h3>
+                    <div class="bin-display">
+                        <img id="result-bin-img" src="assets/bins.png" alt="Sonuç Kutusu">
+                        <h2 id="result-bin-name">METAL KUTUSU</h2>
+                        <p id="result-message">Harika! Bu atığı doğru kutuya atarak doğayı korudun.</p>
+                    </div>
+                    <button class="game-btn secondary" id="play-again-btn">TEKRAR OYNA</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Sıfır Atık Okulu ♻️</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
